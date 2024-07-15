@@ -36,6 +36,9 @@ class DemoSecurityConfiguration {
 
     @Bean
     fun userDetailsManager(dataSource: DataSource): UserDetailsManager {
-        return JdbcUserDetailsManager(dataSource)
+        return JdbcUserDetailsManager(dataSource).apply {
+            usersByUsernameQuery = "SELECT user_id, pw, active FROM members WHERE user_id=?"
+            setAuthoritiesByUsernameQuery("SELECT user_id, role FROM roles WHERE user_id=?")
+        }
     }
 }
