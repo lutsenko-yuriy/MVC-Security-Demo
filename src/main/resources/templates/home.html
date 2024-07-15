@@ -22,7 +22,12 @@ Welcome to The Company Home Page!
     Role(s): <span sec:authentication="principal.authorities"></span>
 </p>
 <hr>
-
+<p>
+    <a th:href="@{/leaders}">Leadership Meeting</a> (Only for Manager peeps)
+</p>
+<p>
+    <a th:href="@{/systems}">IT Systems Meeting</a> (Only for Admin peeps)
+</p>
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout" />
 </form>
