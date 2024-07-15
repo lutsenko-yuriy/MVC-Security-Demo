@@ -21,6 +21,9 @@ class DemoSecurityConfiguration {
                     .loginProcessingUrl("/authenticateTheUser")
                     .permitAll()
             }
+            .logout {
+                it.permitAll()
+            }
         return http.build()
     }
 
