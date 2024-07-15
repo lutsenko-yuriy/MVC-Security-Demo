@@ -28,6 +28,9 @@ class DemoSecurityConfiguration {
             .logout {
                 it.permitAll()
             }
+            .exceptionHandling {
+                it.accessDeniedPage("/access-denied")
+            }
         return http.build()
     }
 
