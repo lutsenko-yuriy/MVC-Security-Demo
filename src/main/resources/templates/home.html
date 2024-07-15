@@ -22,10 +22,10 @@ Welcome to The Company Home Page!
     Role(s): <span sec:authentication="principal.authorities"></span>
 </p>
 <hr>
-<p sec:authorize="${hasRole('MANAGER')}">
+<p sec:authorize="hasRole('MANAGER')">
     <a th:href="@{/leaders}">Leadership Meeting</a> (Only for Manager peeps)
 </p>
-<p sec:authorize="${hasRole('ADMIN')}">
+<p sec:authorize="hasRole('ADMIN')">
     <a th:href="@{/systems}">IT Systems Meeting</a> (Only for Admin peeps)
 </p>
 <form action="#" th:action="@{/logout}" method="post">
