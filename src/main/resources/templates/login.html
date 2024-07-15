@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <h3>Custom Login Page</h3>
+
+<div th:if="${param.error}">
+    <i class="error">Sorry, but your credentials are invalid!</i>
+</div>
 
 <form action="#" th:action="@{/authenticateTheUser}" method="post">
     <p>
